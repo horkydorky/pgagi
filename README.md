@@ -96,18 +96,3 @@ The core logic of the chatbot is driven by a comprehensive `SYSTEM_PROMPT`. This
     -   **Confirmation for Ending Conversation:** A two-step rule requires the AI to ask for confirmation before quitting, preventing accidental exits.
     -   **Post-Conclusion Handling:** The AI is explicitly told to remain active to answer follow-up questions after the main screening is complete, ensuring a coherent user experience.
 
-## 6. Challenges & Solutions
-
-During development, several challenges were encountered and addressed:
-
-1.  **Challenge:** The initial model (`gemini-1.5-pro-latest`) was not found, causing a `404 Error`.
-    *   **Solution:** The model was changed to `gemini-pro`, the standard and widely available model for this use case, which immediately resolved the issue.
-
-2.  **Challenge:** The application frequently hit a `429 Rate Limit Error`.
-    *   **Solution:** Investigation revealed the Google AI Studio free tier has a very low limit (2 requests/minute). The solution is to either wait for the quota to reset or, for a more robust solution, enable billing on the Google Cloud project to increase the limit to 60 requests/minute.
-
-3.  **Challenge:** The API would sometimes return a generic error, especially with informal or multilingual input.
-    *   **Solution:** This was traced to the API's default safety filters being overly cautious. By explicitly setting the `safety_settings` to `BLOCK_NONE` for all categories, these false positives were eliminated, making the chatbot much more reliable.
-
-4.  **Challenge:** The chatbot's UI was basic and lacked a professional feel.
-    *   **Solution:** Custom CSS was injected into the Streamlit app to apply a new font, a branded color scheme (light navy blue), custom chat bubble styles, and a professional sidebar. This significantly improved the user experience and met the "UI Enhancements" bonus criteria.
