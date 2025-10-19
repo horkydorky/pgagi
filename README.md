@@ -99,10 +99,10 @@ The core logic of the chatbot is driven by a comprehensive `SYSTEM_PROMPT`. This
 ## 6. Challenges & Solutions
 
  **Challenge:** The application frequently hit a `429 Rate Limit Error`.
-    *   **Solution:** Investigation revealed the Google AI Studio free tier has a very low limit (2 requests/minute). The solution is to either wait for the quota to reset or, for a more robust solution, enable billing on the Google Cloud project to increase the limit to 60 requests/minute.
+1.    *   **Solution:** Investigation revealed the Google AI Studio free tier has a very low limit (2 requests/minute). The solution is to either wait for the quota to reset or, for a more robust solution, enable billing on the Google Cloud project to increase the limit to 60 requests/minute.
 
-3.  **Challenge:** The API would sometimes return a generic error, especially with informal or multilingual input.
+2.  **Challenge:** The API would sometimes return a generic error, especially with informal or multilingual input.
     *   **Solution:** This was traced to the API's default safety filters being overly cautious. By explicitly setting the `safety_settings` to `BLOCK_NONE` for all categories, these false positives were eliminated, making the chatbot much more reliable.
 
-4.  **Challenge:** The chatbot's UI was basic and lacked a professional feel.
+3.  **Challenge:** The chatbot's UI was basic and lacked a professional feel.
     *   **Solution:** Custom CSS was injected into the Streamlit app to apply a new font, a branded color scheme (light navy blue), custom chat bubble styles, and a professional sidebar. This significantly improved the user experience and met the "UI Enhancements" bonus criteria.
