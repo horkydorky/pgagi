@@ -98,8 +98,8 @@ The core logic of the chatbot is driven by a comprehensive `SYSTEM_PROMPT`. This
     -   
 ## 6. Challenges & Solutions
 
- **Challenge:** The application frequently hit a `429 Rate Limit Error`.
-1.    *   **Solution:** Investigation revealed the Google AI Studio free tier has a very low limit (2 requests/minute). The solution is to either wait for the quota to reset or, for a more robust solution, enable billing on the Google Cloud project to increase the limit to 60 requests/minute.
+1.  **Challenge:** The application frequently hit a `429 Rate Limit Error`.
+ *   **Solution:** Investigation revealed the Google AI Studio free tier has a very low limit (2 requests/minute). The solution is to either wait for the quota to reset or, for a more robust solution, enable billing on the Google Cloud project to increase the limit to 60 requests/minute.
 
 2.  **Challenge:** The API would sometimes return a generic error, especially with informal or multilingual input.
     *   **Solution:** This was traced to the API's default safety filters being overly cautious. By explicitly setting the `safety_settings` to `BLOCK_NONE` for all categories, these false positives were eliminated, making the chatbot much more reliable.
