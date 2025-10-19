@@ -14,7 +14,6 @@ def load_css():
                 font-family: 'Roboto', sans-serif;
             }
 
-            /* --- CHAT BUBBLE STYLING --- */
             [data-testid="stChatMessage"] {
                 border-radius: 20px;
                 padding: 1rem 1.25rem;
@@ -27,7 +26,6 @@ def load_css():
                 background-color: #E0F7FA; /* Light teal for assistant */
             }
             
-            /* --- SIDEBAR STYLING --- */
             [data-testid="stSidebar"] {
                 background-color: #4A6B8A; /* Light Navy Blue */
             }
@@ -67,6 +65,7 @@ You must adhere strictly to the following conversational flow and rules. Do not 
     - Years of Professional Experience
     - Desired Position(s)
     - Current Location
+    If the user does'nt answer any question say we need it are you sure you want to skip.Then if the user still wants to skip move on to other remaining questions.
 3.  **Tech Stack Declaration:** After gathering all personal information, ask the candidate to list their primary tech stack,frameworks,databses and other relevant technical skills.
 4.  **Technical Question Generation:**
     - Once the candidate provides their tech stack, acknowledge it.
